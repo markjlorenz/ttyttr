@@ -35,5 +35,3 @@ func (t *Tweet) Get() *serialize.Tweet {
 
   return serialize.NewTweet(data.Bytes())
 }
-
-
