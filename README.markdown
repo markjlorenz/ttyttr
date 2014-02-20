@@ -1,3 +1,20 @@
+## Usage
+```
+markjlorenz@BabyGoat$ ./bin/ttyttr 434135040256008192
+```
+
+```
+⌈--------------------------------------------------⌉
+|Gary Bernhardt                              14-Feb|
+|@garybernhardt                                    |
+|                                                  |
+|Reminder to never use Array#[] or Hash#[] in Ruby.|
+|  I mean this literally: never. If you want nil,  |
+|       explicitly say `x.fetch(i) { nil }`.       |
+|                                                  |
+|/garybernhardt/status/434135040256008192          |
+⌊--------------------------------------------------⌋
+```
 ## Getting a `Bearer` token:
 
 ```
