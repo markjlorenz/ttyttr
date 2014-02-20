@@ -5,12 +5,13 @@ import (
   "strings"
 )
 
-const TL string = "⌈"
-const TR string = "⌉"
-const BL string = "⌊"
-const BR string = "⌋"
-const HR string = "-"
-const VB string = "|"
+const TL       string = "⌈"
+const TR       string = "⌉"
+const BL       string = "⌊"
+const BR       string = "⌋"
+const HR       string = "-"
+const VB       string = "|"
+const FillChar string = " "
 
 type Card struct {
   width  int
@@ -30,10 +31,18 @@ func (c *Card) String() string {
     fence(c.topLine()),
     fence(c.secondLine()),
     fence(c.blankLine()),
+  }
+
+  textLines := fenceLines(c.padLines(c.textLines()))
+  lines = append(lines, textLines...)
+
+  lines = append(
+    lines,
     fence(c.blankLine()),
     fence(c.bottomLine()),
     c.bottomBorder(),
-  }
+  )
+
   return strings.Join(lines, "\n")
 }
 
@@ -74,7 +83,7 @@ func (c *Card)blankLine() string {
 }
 
 func repeat(length int) string {
-  return strings.Repeat(" ", length)
+  return strings.Repeat(FillChar, length)
 }
 
 func fence(line string) string {
