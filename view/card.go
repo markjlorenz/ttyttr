@@ -5,10 +5,10 @@ import (
   "strings"
 )
 
-const TL       string = "⌈"
-const TR       string = "⌉"
-const BL       string = "⌊"
-const BR       string = "⌋"
+const TL       string = "."
+const TR       string = "."
+const BL       string = "*"
+const BR       string = "*"
 const HR       string = "-"
 const VB       string = "|"
 const FillChar string = " "
