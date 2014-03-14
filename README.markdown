@@ -27,3 +27,56 @@ Content-Length: 29
 
 grant_type=client_credentials
 ```
+
+## Tests
+
+`make test`
+
+Should output:
+```
+go run ttyttr.go 434135040256008192
+.--------------------------------------------------.
+|Gary Bernhardt                              14-Feb|
+|@garybernhardt                                    |
+|                                                  |
+|Reminder to never use Array#[] or Hash#[] in Ruby.|
+|  I mean this literally: never. If you want nil,  |
+|       explicitly say `x.fetch(i) { nil }`.       |
+|                                                  |
+|/garybernhardt/status/434135040256008192          |
+*--------------------------------------------------*
+go run ttyttr.go 444239051965882368
+.--------------------------------------------------.
+|jennmoneydollars                            13-Mar|
+|@jennschiffer                                     |
+|                                                  |
+|  i regularly search "cool-code-pal" here to see  |
+|   people responding to css perverts posts. well  |
+|  apparently I've angered a bunch of germans lol  |
+|                                                  |
+|/jennschiffer/status/444239051965882368           |
+*--------------------------------------------------*
+go run ttyttr.go 442781697596092418
+.--------------------------------------------------.
+|Dorian S. Nakamoto                          09-Mar|
+|@DorianSatoshi                                    |
+|                                                  |
+|         1. Invent Bitcoin under my name          |
+|  2. Take very careful steps to remain anonymous  |
+|                      3. ???                      |
+|                  4. FREE LUNCH                   |
+|                                                  |
+|/DorianSatoshi/status/442781697596092418          |
+*--------------------------------------------------*
+go run ttyttr.go 415804923591147520
+.--------------------------------------------------.
+|Akshar                                      25-Dec|
+|@AksharPathak                                     |
+|                                                  |
+|  The longest word in the English dictionary is   |
+| mutualfundsaresubjecttomarketriskpleasereadtheoff|
+|       erdocumentcarefullybeforeinvesting.        |
+|                                                  |
+|/AksharPathak/status/415804923591147520           |
+*--------------------------------------------------*
+```
