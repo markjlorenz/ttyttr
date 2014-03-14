@@ -1,18 +1,27 @@
 package view
 
+const WS rune = ' '
+const NL rune = '\n'
+
 func (c *Card) textLines() (lines []string) {
   var split func(text string) (string)
 
   split = func(text string) string {
-    white := ' '
     lastWhite := 0
+    splitAt   := len(text)
 
     var line string
-    var splitAt int
 
     for i, char := range text {
-      if char == white {
+      if char == WS {
         lastWhite = i
+      }
+
+      if char == NL {
+        splitAt = i
+        line  = split(string(text[splitAt+1:]))
+        lines = append(lines, line)
+        break
       }
 
       if i == c.width {
@@ -22,12 +31,12 @@ func (c *Card) textLines() (lines []string) {
         } else {
           splitAt = lastWhite
         }
-        line = split(string(text[splitAt:]))
+        line  = split(string(text[splitAt:]))
         lines = append(lines, line)
-        return string(text[:splitAt])
+        break
       }
     }
-    return(text) // short line
+    return(text[:splitAt])
   }
 
   line := split(c.tweet.Text)
